@@ -4,12 +4,16 @@
   "description": "Binance Smart Chain Scalping Bot",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "compile": "truffle compile",
-    "deploy:testnet": "truffle migrate --network bscTestnet",
-    "deploy:mainnet": "truffle migrate --network bscMainnet",
-    "test": "truffle test"
+  "start": "node server.js",
+  "dev": "nodemon server.js",
+  "debug": "BSC_DEBUG=true node server.js",
+  "compile": "truffle compile",
+  "deploy:testnet": "truffle migrate --network bscTestnet",
+  "deploy:mainnet": "truffle migrate --network bscMainnet",
+  "test": "truffle test",
+  "frontend": "http-server . -p 8080 -c-1",
+  "verify:testnet": "truffle run verify ProfitDistributor ScalpingBot --network bscTestnet",
+  "verify:mainnet": "truffle run verify ProfitDistributor ScalpingBot --network bscMainnet"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.5",
